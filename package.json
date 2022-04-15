@@ -1,6 +1,6 @@
 {
   "name": "react-axios-data",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "useFetch.js",
   "scripts": {
@@ -10,7 +10,12 @@
     "type": "git",
     "url": "https://github.com/hklohani/react-axios-data.git"
   },
-  "keywords": ["react", "axios", "fetch", "react-native"],
+  "keywords": [
+    "react",
+    "axios",
+    "fetch",
+    "react-native"
+  ],
   "author": "Himanshu Kumar",
   "license": "ISC",
   "peerDependencies": {
