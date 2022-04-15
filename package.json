@@ -1,0 +1,20 @@
+{
+  "name": "react-axios-data",
+  "version": "1.0.2",
+  "description": "",
+  "main": "useFetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hklohani/react-axios-data.git"
+  },
+  "keywords": [],
+  "author": "Himanshu Kumar",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
