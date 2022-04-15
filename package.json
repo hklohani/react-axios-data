@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/hklohani/react-axios-data.git"
   },
-  "keywords": [],
+  "keywords": ["react", "axios", "fetch", "react-native"],
   "author": "Himanshu Kumar",
   "license": "ISC",
   "peerDependencies": {
