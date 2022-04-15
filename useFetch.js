@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (x) => {
+const useFetch = (setter) => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null)
     useEffect(() => {
         const get = async () => {
             try {
-                const response = await axios(x)
+                const response = await axios(setter)
                 setData(response);
             } catch (err) {
                 if (err.response) {
@@ -25,7 +25,16 @@ const useFetch = (x) => {
                 }
             }
         }
-        get()
+        if (setter.url && setter.method) {
+            setError(null)
+           get()
+        }else{
+            setData(null);
+            if(!setter.url) setError('url is required')
+            else{
+                setError('method is required')
+            }
+        }
     }, []);
 
     return { data, error };
