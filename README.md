@@ -6,6 +6,7 @@ import useFetch from 'react-axios-data';
 
 const { data, error } = useFetch({url :'',method: '', body: '', headers: '', params: ''});
 
+*Note: Required Parameter --> url,method
 ```
 
 ## Installation
