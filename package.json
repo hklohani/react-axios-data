@@ -18,10 +18,6 @@
   ],
   "author": "Himanshu Kumar",
   "license": "ISC",
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
   "dependencies": {
     "axios": "^0.26.1"
   }
