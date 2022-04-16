@@ -18,7 +18,7 @@ $ npm i react-axios-data
 
 *Note -- You can add default base url to your project otherwise you have to repeat baseURL everytime
 
-     - axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
+    axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
 
 ## GET
 
