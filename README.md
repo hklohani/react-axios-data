@@ -5,7 +5,7 @@ import useFetch from 'react-axios-data';
 
 const { data, error } = useFetch({url :'',method: '', body: {}, headers: {}, params: {}});
 
-*Note: Required Parameter --> url,method
+Note: Required Parameter --> url,method
 ```
 
 ## Installation
@@ -16,9 +16,9 @@ $ npm i react-axios-data
 
 ## Example
 
-*Note -- You can add default base url to your project otherwise you have to repeat baseURL everytime
+Note -- You can add default base url to your project otherwise you have to repeat baseURL everytime
 
-    axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
+    axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';(example url)
 
 ### GET
 
