@@ -16,7 +16,7 @@ $ npm i react-axios-data
 
 # Example
 
-## You can add default base url to your project
+You can add default base url to your project
 
      - axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
 
@@ -71,7 +71,7 @@ const { data, error } = useFetch({
 });
 ```
 
-# DELETE
+## DELETE
 
 ```js
 const { data, error } = useFetch({ url: "/posts/1", method: "delete" });
