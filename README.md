@@ -14,19 +14,19 @@ const { data, error } = useFetch({url :'',method: '', body: {}, headers: {}, par
 $ npm i react-axios-data
 ```
 
-# Example
+## Example
 
 *Note -- You can add default base url to your project otherwise you have to repeat baseURL everytime
 
     axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
 
-## GET
+### GET
 
 ```js
 const { data, error } = useFetch({ url: "/posts", method: "get" });
 ```
 
-## CREATE
+### CREATE
 
 ```js
 const { data, error } = useFetch({
@@ -39,7 +39,7 @@ const { data, error } = useFetch({
 });
 ```
 
-## UPDATE
+### UPDATE
 
 ```js
 const { data, error } = useFetch({
@@ -56,7 +56,7 @@ const { data, error } = useFetch({
 });
 ```
 
-## PATCH
+### PATCH
 
 ```js
 const { data, error } = useFetch({
@@ -71,13 +71,13 @@ const { data, error } = useFetch({
 });
 ```
 
-## DELETE
+### DELETE
 
 ```js
 const { data, error } = useFetch({ url: "/posts/1", method: "delete" });
 ```
 
-## Filtering
+### Filtering
 
 ```js
 const { data, error } = useFetch({
