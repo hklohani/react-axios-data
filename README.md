@@ -1,11 +1,17 @@
 ## Quick Start
 
 ```js
-import useFetch from 'react-axios-data';
+import {useAxiosFetch, manipulateAxiosData} from 'react-axios-data';
 
-const { data, error } = useFetch({url :'',method: '', body: {}, headers: {}, params: {}});
+&rarr; const { data, error } = useAxiosFetch({url :'',method: 'get', body: {}, headers: {}, params: {}});
+&rarr; manipulateAxiosData({
+  url: '',
+  method: '',
+  body: {},
+  headers: {},
+  params: {}
+}).then(({ error, data }) => {});
 
-Note: Required Parameter --> url,method
 ```
 
 ## Installation
@@ -16,15 +22,19 @@ $ npm i react-axios-data
 $ yarn add react-axios-data
 ```
 
+**_NOTE:_**
+
+> You can add default config for your project so that you don't have to pass these again and again.
+
+```js
+axios.defaults.baseURL = "https://api.example.com";
+axios.defaults.headers.common["Authorization"] = AUTH_TOKEN;
+axios.defaults.headers.post["Content-Type"] =
+  "application/x-www-form-urlencoded";
+```
 
 **_NOTE:_**
-> You can add default config for your project so that you don't have to pass these again and again.
-```js
-axios.defaults.baseURL = 'https://api.example.com';
-axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-```
-**_NOTE:_**
+
 > **useAxiosFetch** &rarr; It will only support GET method and work as custom hooks for calling list of data on initial render.  
 > **manipulateAxiosData** &rarr; It returns Promise and support all methods.
 
@@ -96,7 +106,7 @@ manipulateAxiosData({ url: "/posts/1", method: "delete" }).then(
 );
 ```
 
-### Filtering
+### FILTER
 
 ```js
 manipulateAxiosData({
