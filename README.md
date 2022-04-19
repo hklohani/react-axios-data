@@ -3,8 +3,8 @@
 ```js
 import {useAxiosFetch, manipulateAxiosData} from 'react-axios-data';
 
-- const { data, error } = useAxiosFetch({url :'',method: 'get', body: {}, headers: {}, params: {}});
-- manipulateAxiosData({
+-> const { data, error } = useAxiosFetch({url :'',method: 'get', body: {}, headers: {}, params: {}});
+-> manipulateAxiosData({
   url: '',
   method: '',
   body: {},
