@@ -16,7 +16,6 @@ $ npm i react-axios-data
 $ yarn add react-axios-data
 ```
 
-## Example
 
 **_NOTE:_**
 > You can add default config for your project so that you don't have to pass these again and again.
@@ -28,6 +27,8 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 **_NOTE:_**
 > **useAxiosFetch** &rarr; It will only support GET method and work as custom hooks for calling list of data on initial render.  
 > **manipulateAxiosData** &rarr; It returns Promise and support all methods.
+
+## Example
 
 ### GET
 
