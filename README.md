@@ -19,15 +19,15 @@ $ yarn add react-axios-data
 ## Example
 
 **_NOTE:_**
-### You can add default config for your project so that you don't have to repeat same again and again
+> You can add default config for your project so that you don't have to repeat same again and again
 ```js
 axios.defaults.baseURL = 'https://api.example.com';
 axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 ```
 **_NOTE:_**
-> **useAxiosFetch** hooks only support GET method.
-> **manipulateAxiosData** will return promise.
+> **useAxiosFetch** hooks only support GET method and work as custom hook for calling list of data.
+> **manipulateAxiosData** will return promise and support all method.
 
 ### GET
 
