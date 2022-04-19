@@ -1,43 +1,49 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (setter) => {
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null)
-    useEffect(() => {
-        const get = async () => {
-            try {
-                const response = await axios(setter)
-                setData(response);
-            } catch (err) {
-                if (err.response) {
-                    // The client was given an error response (5xx, 4xx)
-                    setError(err)
-                } else if (err.request) {
-                    // The client never received a response, and the request was never left
-                    setError(err)
+export const useAxiosFetch = ({ url, headers = null, params = null, method = 'get' }) => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
-                } else {
-                    // Anything else
-                    setError(err)
+  useEffect(() => {
+    const list = async () => {
+      try {
+        const response = await axios({
+          method: method,
+          url: url,
+          headers: headers,
+          params: params,
+        });
+        setData(response.data);
+      } catch (err) {
+        setError(err);
+      }
+    };
+    list();
+  }, []);
 
-
-                }
-            }
-        }
-        if (setter.url && setter.method) {
-            setError(null)
-           get()
-        }else{
-            setData(null);
-            if(!setter.url) setError('url is required')
-            else{
-                setError('method is required')
-            }
-        }
-    }, []);
-
-    return { data, error };
+  return { data, error };
 };
-
-export default useFetch;
+export const manipulateAxiosData = async ({
+  url,
+  method,
+  body = null,
+  headers = null,
+  params = null,
+}) => {
+  let error = null;
+  let data = null;
+  try {
+    const res = await axios({
+      method: method,
+      url: url,
+      data: body,
+      params: params,
+      headers: headers,
+    });
+    data = res;
+  } catch (err) {
+    error = err;
+  }
+  return { error, data };
+};
