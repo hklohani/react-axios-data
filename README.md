@@ -26,7 +26,7 @@ axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 ```
 **_NOTE:_**
-> **useAxiosFetch** &rarr; It will only support GET method and work as custom hooks for calling list of data on initial render.
+> **useAxiosFetch** &rarr; It will only support GET method and work as custom hooks for calling list of data on initial render.  
 > **manipulateAxiosData** &rarr; It returns Promise and support all methods.
 
 ### GET
