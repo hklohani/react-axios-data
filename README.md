@@ -18,16 +18,19 @@ $ yarn add react-axios-data
 
 ## Example
 
-- You can add default config for your project so that you don't have to repeat same again and again
-  axios.defaults.baseURL = 'https://api.example.com';
-  axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-  axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+**_NOTE:_**
+You can add default config for your project so that you don't have to repeat same again and again
+axios.defaults.baseURL = 'https://api.example.com';
+axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+
+**_NOTE:_**
+useAxiosFetch hooks only support GET method.
+manipulateAxiosData will return promise.
 
 ### GET
 
 ```js
-useAxiosFetch hooks only support GET method.
-
 const { data, error } = useAxiosFetch({
   url: "/posts",
   params: { userId: 1 },
@@ -46,7 +49,7 @@ manipulateAxiosData({
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
-}).then(({error,data}) => {});;
+}).then(({ error, data }) => {});
 ```
 
 ### UPDATE
@@ -63,7 +66,7 @@ manipulateAxiosData({
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
-}).then(({error,data}) => {});;
+}).then(({ error, data }) => {});
 ```
 
 ### PATCH
@@ -78,13 +81,15 @@ manipulateAxiosData({
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
-}).then(({error,data}) => {});;
+}).then(({ error, data }) => {});
 ```
 
 ### DELETE
 
 ```js
-manipulateAxiosData({ url: "/posts/1", method: "delete" });
+manipulateAxiosData({ url: "/posts/1", method: "delete" }).then(
+  ({ error, data }) => {}
+);
 ```
 
 ### Filtering
@@ -94,7 +99,7 @@ manipulateAxiosData({
   url: "/posts",
   method: "get",
   params: { userId: 1 },
-}).then(({error,data}) => {});;
+}).then(({ error, data }) => {});
 ```
 
 Made with <span style="color: #e25555;">&hearts;</span> by [Himanshu](https://github.com/hklohani)
