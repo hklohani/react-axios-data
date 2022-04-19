@@ -12,37 +12,47 @@ Note: Required Parameter --> url,method
 
 ```console
 $ npm i react-axios-data
+          or
+$ yarn add react-axios-data
 ```
 
 ## Example
 
-Note -- You can add default base url to your project otherwise you have to repeat baseURL everytime
-
-    axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'; (example url)
+- You can add default config for your project so that you don't have to repeat same again and again
+  axios.defaults.baseURL = 'https://api.example.com';
+  axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+  axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 ### GET
 
 ```js
-const { data, error } = useFetch({ url: "/posts", method: "get" });
+useAxiosFetch hooks only support GET method.
+
+const { data, error } = useAxiosFetch({
+  url: "/posts",
+  params: { userId: 1 },
+});
+
+manipulateAxiosData({ url: "/posts", method: "get" }).then(({error,data}) => {});
 ```
 
 ### CREATE
 
 ```js
-const { data, error } = useFetch({
+manipulateAxiosData({
   url: "/posts",
   method: "post",
   body: { title: "foo", body: "bar", userId: 1 },
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
-});
+}).then(({error,data}) => {});;
 ```
 
 ### UPDATE
 
 ```js
-const { data, error } = useFetch({
+manipulateAxiosData({
   url: "/posts/1",
   method: "put",
   body: {
@@ -53,13 +63,13 @@ const { data, error } = useFetch({
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
-});
+}).then(({error,data}) => {});;
 ```
 
 ### PATCH
 
 ```js
-const { data, error } = useFetch({
+manipulateAxiosData({
   url: "/posts/1",
   method: "patch",
   body: {
@@ -68,23 +78,23 @@ const { data, error } = useFetch({
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
-});
+}).then(({error,data}) => {});;
 ```
 
 ### DELETE
 
 ```js
-const { data, error } = useFetch({ url: "/posts/1", method: "delete" });
+manipulateAxiosData({ url: "/posts/1", method: "delete" });
 ```
 
 ### Filtering
 
 ```js
-const { data, error } = useFetch({
+manipulateAxiosData({
   url: "/posts",
   method: "get",
   params: { userId: 1 },
-});
+}).then(({error,data}) => {});;
 ```
 
 Made with <span style="color: #e25555;">&hearts;</span> by [Himanshu](https://github.com/hklohani)
